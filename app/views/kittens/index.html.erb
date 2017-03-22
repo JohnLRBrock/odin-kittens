@@ -1,0 +1,11 @@
+<% if @kittens.any? %>
+  <ul><% @kittens.each do |kitten| %>
+    <li><%= render 'kitten', kitten: kitten %>
+      <%= link_to "#{kitten.name}'s page", kitten %>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  <h3>There are no kittens here yet!</h3>
+  <%= link_to 'Make a new kitten?', new_kitten_path %>
+<% end %>
